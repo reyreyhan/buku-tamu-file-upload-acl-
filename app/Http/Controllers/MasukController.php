@@ -19,7 +19,7 @@ class MasukController extends Controller
         $data[1] = Users::where('username',$request->username)->where('password',$request->password)->with(['role'])->get();
         $request->session()->put('sessionUser',$data[1]);
         //var_dump(session('sessionUser')[0]);
-        return redirect('/input');
+        return redirect('/admin');
       } else {
         return redirect()->back();
       }
